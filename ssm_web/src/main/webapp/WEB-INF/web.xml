@@ -35,14 +35,15 @@
   <!--</filter-mapping>-->
 
 
-  <!--<servlet>-->
-    <!--<servlet-name>Global</servlet-name>-->
-    <!--<servlet-class>com.imooc.sm.global.DispatcherServlet</servlet-class>-->
-  <!--</servlet>-->
-  <!--<servlet-mapping>-->
-    <!--<servlet-name>Global</servlet-name>-->
-    <!--<url-pattern>*.do</url-pattern>-->
-  <!--</servlet-mapping>-->
+  <servlet>
+    <servlet-name>Global</servlet-name>
+    <servlet-class>com.isyxf.ssm.global.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Global</servlet-name>
+    <!-- .do结尾的,表示核心控制器需要处理的 -->
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
   
   
 </web-app>
