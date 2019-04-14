@@ -15,16 +15,16 @@
     <!-- Spring整合Mybatis -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/sm?useUnicode=true&amp;characterEncoding=utf-8"/>
+        <property name="url" value="jdbc:mysql://118.25.49.178:3306/ssm?useUnicode=true&amp;characterEncoding=utf-8"/>
         <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="password" value="yxf@3306"/>
     </bean>
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.imooc.sm.entity"/>
+        <property name="typeAliasesPackage" value="com.isyxf.ssm.entity"/>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.imooc.sm.dao"/>
+        <property name="basePackage" value="com.isyxf.ssm.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
     <!-- 声明式事务 -->

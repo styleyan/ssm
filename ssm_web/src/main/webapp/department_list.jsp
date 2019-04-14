@@ -47,16 +47,16 @@
                     <th scope="col">地址</th>
                     <th scope="col">操作</th>
                 </tr>
-                <c:forEach items="${LIST}" var="dep">
-                <tr>
-                    <td>${dep.name}</td>
-                    <td>${dep.address}</td>
-                    <td>
-                        <a href="add.html" class="btn">编辑</a>
-                        <a href="" class="btn">删除</a>
-                    </td>
-                </tr>
-                </c:forEach>
+                <%--<c:forEach items="${LIST}" var="dep">--%>
+                <%--<tr>--%>
+                    <%--<td>${dep.name}</td>--%>
+                    <%--<td>${dep.address}</td>--%>
+                    <%--<td>--%>
+                        <%--<a href="add.html" class="btn">编辑</a>--%>
+                        <%--<a href="" class="btn">删除</a>--%>
+                    <%--</td>--%>
+                <%--</tr>--%>
+                <%--</c:forEach>--%>
             </table>
             <!--列表-->
             <!--右边底部-->

@@ -6,6 +6,7 @@ import com.isyxf.ssm.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("departmentService")
@@ -31,6 +32,12 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     public List<Department> getAll() {
-        return departmentDao.selectAll();
+        List<Department> list = new ArrayList<Department>();
+        try{
+            list = departmentDao.selectAll();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }
