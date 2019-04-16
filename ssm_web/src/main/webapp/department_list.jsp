@@ -62,7 +62,7 @@
             <!--右边底部-->
             <div class="r_foot">
                 <div class="r_foot_m">
-                    <a href="add.html" class="btn">添加</a>
+                    <a href="toAdd.do" class="btn">添加</a>
                 </div>
             </div>
             <!--右边底部-->

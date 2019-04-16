@@ -24,7 +24,7 @@ public class DepartmentController {
         request.getRequestDispatcher("../department_list.jsp").forward(request, response);
     }
 
-    // /department/add.do
+    // /department/toAdd.do
     public void toAdd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("../department_add.jsp").forward(request, response);
     }

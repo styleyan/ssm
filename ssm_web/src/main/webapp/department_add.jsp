@@ -39,7 +39,7 @@
                 <span class="name">添加部门</span>
             </div>
             <div class="space_hx">&nbsp;</div>
-            <form action=add.do" method="post" name="addForm">
+            <form action="add.do" method="post" name="addForm">
                 <div class="xjhy">
                     <!--高级配置-->
                     <ul class="hypz gjpz clearfix">
