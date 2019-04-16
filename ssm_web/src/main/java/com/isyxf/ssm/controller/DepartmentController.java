@@ -60,6 +60,9 @@ public class DepartmentController {
      * @throws IOException
      */
     public void toEdit(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        Integer id = Integer.parseInt(httpServletRequest.getParameter("id"));
+        Department department = departmentService.get(id);
+        httpServletRequest.setAttribute("OBJ", department);
         httpServletRequest.getRequestDispatcher("../department_edit.jsp").forward(httpServletRequest, httpServletResponse);
     }
 
@@ -70,8 +73,8 @@ public class DepartmentController {
         String name = httpServletRequest.getParameter("name");
         String address = httpServletRequest.getParameter("address");
         String id = httpServletRequest.getParameter("id");
-        Department department = new Department();
 
+        Department department = new Department();
         department.setAddress(address);
         department.setName(name);
         department.setId(Integer.parseInt(id));
@@ -80,5 +83,15 @@ public class DepartmentController {
 
         // 回控制器
         response.sendRedirect("list.do");
+    }
+
+    /**
+     * 删除
+     */
+    public void remove(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        Integer id = Integer.parseInt(httpServletRequest.getParameter("id"));
+        departmentService.remove(id);
+
+        httpServletResponse.sendRedirect("list.do");
     }
 }

@@ -32,24 +32,21 @@
             </div>
             <div class="space_hx">&nbsp;</div>
             <form action="edit.do" method="post" name="addForm">
-                <%--<input  name="id" type="hidden" value="${OBJ.id}"/>--%>
-                <input  name="id" type="hidden" value=""/>
+                <input  name="id" type="hidden" value="${OBJ.id}"/>
                 <div class="xjhy">
                     <!--高级配置-->
                     <ul class="hypz gjpz clearfix">
                         <li class="clearfix">
                             <span class="title">名称：</span>
                             <div class="li_r">
-                                <%--<input class="chang" name="name" type="text" value="${OBJ.name}"/>--%>
-                                    <input class="chang" name="name" type="text" value=""/>
+                                <input class="chang" name="name" type="text" value="${OBJ.name}"/>
                                 <i>*</i>
                             </div>
                         </li>
                         <li class="clearfix">
                             <span class="title">地址：</span>
                             <div class="li_r">
-                                <%--<input class="chang" name="address" type="text" value="${OBJ.address}"/>--%>
-                                <input class="chang" name="address" type="text" value=""/>
+                                <input class="chang" name="address" type="text" value="${OBJ.address}"/>
                             </div>
                         </li>
                         <li class="tj_btn">
