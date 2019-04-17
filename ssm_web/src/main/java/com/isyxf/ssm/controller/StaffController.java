@@ -20,6 +20,8 @@ import java.util.List;
 public class StaffController {
     @Autowired
     private StaffService staffService;
+    @Autowired
+    private DepartmentService departmentService;
 
     // /staff/list.do
     public void list(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,6 +32,8 @@ public class StaffController {
 
     // /staff/toAdd.do
     public void toAdd(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Department> list = departmentService.getAll();
+        request.setAttribute("DLIST", list);
         request.getRequestDispatcher("../staff_add.jsp").forward(request, response);
     }
 
@@ -83,6 +87,8 @@ public class StaffController {
         Integer id = Integer.parseInt(httpServletRequest.getParameter("id"));
         Staff staff = staffService.get(id);
         httpServletRequest.setAttribute("OBJ", staff);
+        List<Department> list = departmentService.getAll();
+        httpServletRequest.setAttribute("DLIST", list);
         httpServletRequest.getRequestDispatcher("../staff_edit.jsp").forward(httpServletRequest, httpServletResponse);
     }
 
@@ -129,5 +135,16 @@ public class StaffController {
         staffService.remove(id);
 
         httpServletResponse.sendRedirect("list.do");
+    }
+
+    /**
+     * 详情页
+     */
+    public void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Integer id = Integer.parseInt(request.getParameter("id"));
+        Staff staff = staffService.get(id);
+        request.setAttribute("OBJ", staff);
+
+        request.getRequestDispatcher("../staff_detail.jsp").forward(request, response);
     }
 }

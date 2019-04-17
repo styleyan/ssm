@@ -55,7 +55,7 @@
                     <td>
                         <a href="toEdit.do?id=${staff.id}" class="btn">编辑</a>
                         <a href="remove.do?id=${staff.id}" class="btn">删除</a>
-                        <a href="detail.do?id=${staff.id}" class="btn">删除</a>
+                        <a href="detail.do?id=${staff.id}" class="btn">详情</a>
                     </td>
                 </tr>
                 </c:forEach>
