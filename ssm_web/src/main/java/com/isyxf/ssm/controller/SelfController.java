@@ -3,6 +3,7 @@ package com.isyxf.ssm.controller;
 import com.isyxf.ssm.entity.Staff;
 import com.isyxf.ssm.service.SelfService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+@Controller("selfController")
 public class SelfController {
     @Autowired
     SelfService selfService;
@@ -28,11 +30,12 @@ public class SelfController {
 
         if (staff == null) {
             response.sendRedirect("toLogin.do");
-        } else {
-            HttpSession session = request.getSession();
-            session.setAttribute("USER", staff);
-            response.sendRedirect("main.do");
+            return;
         }
+
+        HttpSession session = request.getSession();
+        session.setAttribute("USER", staff);
+        response.sendRedirect("main.do");
     }
 
     // logout.do
@@ -40,5 +43,10 @@ public class SelfController {
         HttpSession httpSession = request.getSession();
         httpSession.setAttribute("USER", null);
         response.sendRedirect("toLogin.do");
+    }
+
+    // /main.do
+    public void main(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
